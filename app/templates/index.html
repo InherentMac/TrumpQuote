@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <img src="{{ url_for('static', filename='trump.png') }}" height="250px" />
+    <div id="tweet" style="margin-top: 2%">
+        <p>{{ quote.value }}</p>
+        <p><i>  - {{ quote._embedded.author[0].name }} ({{ date[1] }} {{ date[0] }})</i></p>
+    </div>
+    <p style="margin-top: 5%;"><a target="_blank" href="{{ quote._embedded.source[0].url }}">View Tweet</a></p>
+    
+{% endblock %}
